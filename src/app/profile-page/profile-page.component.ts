@@ -8,8 +8,8 @@ import {RestService} from '../rest.service';
 })
 export class ProfilePageComponent implements OnInit {
 
-  private profileData;
-  private repoData;
+  profileData;
+  repoData;
 
   selectedTab = 'repositories';
   starredCount = 0;
