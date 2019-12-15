@@ -1,9 +1,9 @@
 <app-nav-bar></app-nav-bar>
 <div style="padding: 24px 35px;" *ngIf="repoData && profileData">
-  <div class="inline-div" style="width: 30%; padding-left: 16px;">
+  <div class="inline-div profile-card">
     <app-profile-card [profileData]="profileData" ></app-profile-card>
   </div>
-  <div class="inline-div" style="width: 65%; vertical-align: top; padding-right: 16px;">
+  <div class="inline-div main-content">
     <div style="border-bottom: 1px solid #c2c2c2;">
       <div class="tab">Overview</div>
       <div class="tab" style="border-bottom-color: coral;" (click)="setTab('repositories')">
@@ -26,4 +26,7 @@
     <app-repositories [repoData]="repoData" *ngIf="selectedTab === 'repositories'">
     </app-repositories>
   </div>
+</div>
+<div *ngIf="notFound">
+  Not Found
 </div>

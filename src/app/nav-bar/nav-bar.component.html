@@ -7,8 +7,11 @@
       </svg>
     </div>
 
-    <div class="inline-div nav-bar-items" style="width: 20%;">
-        <input class="text-input nav-bar-text" type="text" placeholder="Search GitHub">
+    <div class="inline-div nav-bar-items nav-bar-text-input-div">
+      <form [formGroup]="navBarForm" (ngSubmit)="setUserId()">
+        <input formControlName="userIdInput" class="text-input nav-bar-text" type="text" title="Search Users e.g supreetsingh247" placeholder="Search Users e.g supreetsingh247">
+        <button type="submit" style="display: none"></button>
+      </form>
     </div>
 
     <div class="inline-div nav-bar-items adjust">
@@ -25,40 +28,30 @@
     </div>
 
     <div class="inline-div nav-bar-items right adjust2">
-      <div class="Header-item">
-        <a aria-label="You have unread notifications"
-           class="Header-link notification-indicator position-relative tooltipped tooltipped-sw js-socket-channel js-notification-indicator"
-           data-hotkey="g n" data-ga-click="Header, go to notifications, icon:unread"
-           data-channel="notification-changed:42801967" href="/notifications">
-          <span class="mail-status unread"></span>
-          <svg class="fill-white" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true">
-            <path fill-rule="evenodd"
-                  d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"></path>
-          </svg>
-        </a>
-      </div>
+      <a>
+        <svg class="fill-white" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true">
+          <path fill-rule="evenodd"
+                d="M14 12v1H0v-1l.73-.58c.77-.77.81-2.55 1.19-4.42C2.69 3.23 6 2 6 2c0-.55.45-1 1-1s1 .45 1 1c0 0 3.39 1.23 4.16 5 .38 1.88.42 3.66 1.19 4.42l.66.58H14zm-7 4c1.11 0 2-.89 2-2H5c0 1.11.89 2 2 2z"></path>
+        </svg>
+      </a>
     </div>
 
     <div class="inline-div nav-bar-items right adjust2">
-      <div class="Header-item position-relative">
-        <details class="details-overlay details-reset">
-          <summary class="Header-link" aria-label="Create new…" data-ga-click="Header, create new, icon:add" aria-haspopup="menu" role="a">
-            <svg class=fill-white viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path></svg> <span class="dropdown-caret"></span>
-          </summary>
-        </details>
-      </div>
+      <summary aria-label="Create new…" aria-haspopup="menu">
+        <svg class=fill-white viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true">
+          <path fill-rule="evenodd" d="M12 9H7v5H5V9H0V7h5V2h2v5h5v2z"></path>
+        </svg>
+        <span class="dropdown-caret"></span>
+      </summary>
     </div>
 
-    <div class="inline-div nav-bar-items right adjust2">
-      <div class="Header-item position-relative mr-0">
-        <details class="details-overlay details-reset js-feature-preview-indicator-container" data-feature-preview-indicator-src="/users/saurabh35/feature_preview/indicator_check.json">
-          <summary class="Header-link" aria-label="View profile and more" data-ga-click="Header, show menu, icon:avatar" aria-haspopup="menu" role="a">
-            <img alt="@saurabh35" class="avatar" src="https://avatars0.githubusercontent.com/u/42801967?s=40&amp;v=4" height="20" width="20">
-            <span class="feature-preview-indicator js-feature-preview-indicator" hidden=""></span>
-            <span class="dropdown-caret"></span>
-          </summary>
-        </details>
-      </div>
+    <div *ngIf="restService.avatarUrl" class="inline-div nav-bar-items right adjust2">
+      <summary aria-label="View profile and more" data-ga-click="Header, show menu, icon:" aria-haspopup="menu"
+               role="a">
+        <img [src]="restService.avatarUrl" height="20" width="20">
+        <span hidden=""></span>
+        <span class="dropdown-caret"></span>
+      </summary>
     </div>
   </div>
 </div>

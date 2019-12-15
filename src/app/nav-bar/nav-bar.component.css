@@ -4,7 +4,8 @@
 }
 
 .nav-bar-content {
-  height: 30px;
+  min-height: 30px;
+  height: auto;
 }
 
 .fill-white {
@@ -64,4 +65,14 @@
 
 .adjust2 {
   margin-top: 5px;
+}
+
+.nav-bar-text-input-div {
+  width: 20%;
+}
+
+@media only screen and (max-width: 500px) {
+  .nav-bar-text-input-div {
+    width: 25%;
+  }
 }

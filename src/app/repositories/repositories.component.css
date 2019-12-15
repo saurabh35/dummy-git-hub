@@ -39,3 +39,28 @@ a:hover {
 .dropdown-label {
   margin-top: 5px;
 }
+
+.text-input-repo {
+  width: 50%
+}
+
+@media only screen and (max-width: 500px) {
+  .text-input-repo {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .dropdown {
+    margin: 0;
+    display: inline-block;
+    float: none;
+  }
+
+  .button {
+    padding: 6px 0;
+  }
+
+  .type {
+    float: right;
+  }
+}

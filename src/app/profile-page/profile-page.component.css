@@ -16,3 +16,27 @@
   padding: 1px;
   font-weight: 600;
 }
+
+.profile-card {
+  width: 30%;
+  padding-left: 16px;
+}
+
+.main-content {
+  width: 65%;
+  vertical-align: top;
+  padding-right: 16px;
+}
+
+@media only screen and (max-width: 500px) {
+  .profile-card {
+    width: 100%;
+    padding: 0;
+  }
+
+  .main-content {
+    width: 100%;
+    vertical-align: top;
+    padding: 0;
+  }
+}

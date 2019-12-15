@@ -1,7 +1,7 @@
 <div *ngIf="repoData">
 
   <div class="filters">
-    <input [formControl]="searchTextControl" class="text-input" style="width: 50%" type="text"
+    <input [formControl]="searchTextControl" class="text-input text-input-repo" type="text"
            placeholder="Find a repository...">
     <div class="dropdown">
       <div class="inline-div dropdown-label">
@@ -11,7 +11,7 @@
         <option *ngFor="let language of languages" [value]="language">{{language}}</option>
       </select>
     </div>
-    <div class="dropdown">
+    <div class="dropdown type">
       <div class="inline-div dropdown-label">
         Type:&nbsp;
       </div>

@@ -1,0 +1,6 @@
+@media only screen and (min-width: 500px) {
+  .right-align {
+    width: 60%;
+    margin-left: 30%;
+  }
+}
